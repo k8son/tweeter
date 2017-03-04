@@ -14,7 +14,7 @@ http://localhost:8080/swagger-ui.html
 ```
 
 ## API Usage
-Post a message
+Post a message:
 ```
 POST /user/{userId}/tweet
 ```
@@ -23,23 +23,24 @@ Example body:
   "message" : "this is a tweet"
 }
   
-Get all user messages
+----------  
+Get all user messages:
 ```
 GET /user/{userId}/tweet
 ```
-
-Get user timeline messages
+----------
+Get user timeline messages:
 ```
 GET /user/{userId}/timeline
 ```
-
-Follow a user
+----------
+Follow a user:
 ```
 POST /user/{userId}/follow/{followingUserId}
 ```
 Where followingUserId is the user id of the user that is to be followed.
-
-Get all users being followed
+----------
+Get all users being followed:
 ```
 GET /user/{userId}/follow
 ```
