@@ -22,11 +22,14 @@ Example body:
 {
   "message" : "this is a tweet"
 }
-  
+ 
+ 
+
 - Get all user messages:
 ```
 GET /user/{userId}/tweet
 ```
+
 
 - Get user timeline messages:
 ```
@@ -35,11 +38,14 @@ GET /user/{userId}/timeline
 
 ----------
 
+
 - Follow a user:
 ```
 POST /user/{userId}/follow/{followingUserId}
 ```
 Where followingUserId is the user id of the user that is to be followed.
+
+
 
 - Get all users being followed:
 ```
