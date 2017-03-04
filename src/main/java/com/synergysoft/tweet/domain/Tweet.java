@@ -3,15 +3,15 @@ package com.synergysoft.tweet.domain;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
 
 import javax.validation.constraints.Size;
-import java.time.Clock;
-import java.time.Duration;
 import java.time.LocalDateTime;
 
 /**
  * Value object to represent a simple tweet created by a user.
  */
+@ApiModel("Tweet")
 public class Tweet{
     @Size(max = 140)
     private String message;

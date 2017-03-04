@@ -41,9 +41,6 @@ public class FollowController {
     // Get list of users being followed
     @ApiOperation(value = "Get all followed users", notes = "Returns the list of all users being followed",
             produces = "application/json", response = String.class, responseContainer = "List")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userId", value = "id of user who is following", required = true, dataType = "string", paramType = "path")
-    })
     @ApiResponses(value = {@ApiResponse(code = 200, message = "Success")})
     @RequestMapping(value = "/{userId}/follow", method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(value= HttpStatus.OK)

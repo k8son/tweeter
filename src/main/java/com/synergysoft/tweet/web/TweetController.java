@@ -30,12 +30,7 @@ public class TweetController {
 
     // Add tweet
     @ApiOperation(value = "Add tweet", notes = "Allows the user to tweet a message", consumes = "application/json")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userId", value = "user id", required = true, dataType = "string", paramType = "path"),
-            @ApiImplicitParam(name = "tweet", value = "message text", required = true, paramType = "body")
-    })
     @ApiResponses(value = {@ApiResponse(code = 201, message = "Success"), @ApiResponse(code = 500, message = "Failure")})
-
     @RequestMapping(value = "/{userId}/tweet", method = RequestMethod.POST, consumes = "application/json")
     @ResponseStatus(value= HttpStatus.CREATED)
     public void addTweet(@RequestBody @Valid Tweet tweet, @PathVariable String userId){
@@ -46,7 +41,6 @@ public class TweetController {
     // Get User tweets
     @ApiOperation(value = "Get tweets", notes = "Returns the list of user tweets in reverse chronological order",
                     produces = "application/json", response = Tweet.class, responseContainer = "List")
-    @ApiImplicitParams({@ApiImplicitParam(name = "userId", value = "user id", required = true, dataType = "string", paramType = "path")})
     @RequestMapping(value = "/{userId}/tweet", method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(value= HttpStatus.OK)
     public List<Tweet> getTweet(@PathVariable String userId){
@@ -57,7 +51,6 @@ public class TweetController {
     // Get User timeline
     @ApiOperation(value = "Get timeline", notes = "Returns the list of tweets from all users being followed in reverse chronological order",
             produces = "application/json", response = Tweet.class, responseContainer = "List")
-    @ApiImplicitParams({@ApiImplicitParam(name = "userId", value = "user id", required = true, dataType = "string", paramType = "path")})
     @RequestMapping(value = "/{userId}/timeline", method = RequestMethod.GET, produces = "application/json")
     @ResponseStatus(value= HttpStatus.OK)
     public List<Tweet> getTimeline(@PathVariable String userId){
